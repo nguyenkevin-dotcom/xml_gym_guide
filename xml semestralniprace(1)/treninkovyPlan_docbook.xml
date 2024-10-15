@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="cz">
+    <info>
+        <title>Semestrální práce 4IZ238</title>
+        <subtitle>Tréninkové plány</subtitle>
+        <author>
+            <personname>
+                <firstname>Kevin</firstname>
+                <surname>Nguyen</surname>
+            </personname>
+            <affiliation>
+                <address>Email: <email>nguk08@vse.cz</email></address>
+            </affiliation>
+        </author>
+    </info>
+    <preface>
+        <title>Úvod</title>
+        <para>Tento <indexterm><primary>XML dokument</primary></indexterm>XML dokument obsahuje
+            popis semestrální práce z předmětu 4IZ238. Cílem bylo vytvořit tyto dané dokumenty: XML
+            dokument, Schémy XML (XML schema, Schematron), transformace do HTML a PDF (pomocí XSLT)
+            a DocBook.</para>
+    </preface>
+    <chapter>
+        <title>XML dokument</title>
+        <para>Popis elementů a struktura XML dokumentu
+            <filename>treninkovyPlan.xml</filename>.</para>
+        <sect1>
+            <title>Popis elementů XML dokumentu</title>
+            <para>V tabulce jsou jednotlivé elementy a jejich popisy.</para>
+            <table>
+                <title>Tabulka XML elementů</title>
+                <tgroup cols="2">
+                    <colspec colwidth="5cm"/>
+                    <colspec colwidth="10cm"/>
+                    <thead>
+                        <row>
+                            <entry>Název</entry>
+                            <entry>Popis</entry>
+                        </row>
+                    </thead>
+                    <tbody>
+                        <row>
+                            <entry>trainingPlan</entry>
+                            <entry>kořenový element XML dokumentu</entry>
+                        </row>
+                        <row>
+                            <entry>person</entry>
+                            <entry>element, který obsahuje atribut oid (id osoby) a podelementy,
+                                které popisují daného člověka</entry>
+                        </row>
+                        <row>
+                            <entry>forename</entry>
+                            <entry>křestní jméno dané osoby</entry>
+                        </row>
+                        <row>
+                            <entry>surname</entry>
+                            <entry>příjmení dané osoby</entry>
+                        </row>
+                        <row>
+                            <entry>age</entry>
+                            <entry>věk osoby</entry>
+                        </row>
+                        <row>
+                            <entry>height</entry>
+                            <entry>výška osoby</entry>
+                        </row>
+                        <row>
+                            <entry>weight</entry>
+                            <entry>váha osoby</entry>
+                        </row>
+                        <row>
+                            <entry>goal</entry>
+                            <entry>cíl osoby, čeho chce dosáhnout</entry>
+                        </row>
+                        <row>
+                            <entry>profession</entry>
+                            <entry>zaměstnání osoby</entry>
+                        </row>
+                        <row>
+                            <entry>frequencyInAWeek</entry>
+                            <entry>kolikrát daná osoba chodí cvičit</entry>
+                        </row>
+                        <row>
+                            <entry>givenPlan</entry>
+                            <entry>přiřazený plán pro danou osobu</entry>
+                        </row>
+                        <row>
+                            <entry>name</entry>
+                            <entry>název plánu, cvičení</entry>
+                        </row>
+                        <row>
+                            <entry>plan</entry>
+                            <entry>element, který obsahuje atribut pid (id plánu) a podelementy,
+                                které popisují daný plán</entry>
+                        </row>
+                        <row>
+                            <entry>start</entry>
+                            <entry>počátek daného plánu</entry>
+                        </row>
+                        <row>
+                            <entry>end</entry>
+                            <entry>konec daného plánu</entry>
+                        </row>
+                        <row>
+                            <entry>day</entry>
+                            <entry>element, který obsahuje atribut date (datum v daném plánu) a
+                                podelementy, které popisují daný den</entry>
+                        </row>
+                        <row>
+                            <entry>training</entry>
+                            <entry>element, který obsahuje atribut split(split v daném dni) a
+                                podelementy, které popisují daný split</entry>
+                        </row>
+                        <row>
+                            <entry>exercise</entry>
+                            <entry>element, který obsahuje atribut cid (id daného cviku) a
+                                podelementy, které popisují daný cvik</entry>
+                        </row>
+                        <row>
+                            <entry>exercisePhoto</entry>
+                            <entry>element s atributem src obsahující fotku cvičení</entry>
+                        </row>
+                        <row>
+                            <entry>muscles</entry>
+                            <entry>svaly, které budou vytíženy</entry>
+                        </row>
+                        <row>
+                            <entry>musclesPhoto</entry>
+                            <entry>element s atributem src obsahující fotku vytížených svalů</entry>
+                        </row>
+                        <row>
+                            <entry>warmUp</entry>
+                            <entry>rozehřívací část</entry>
+                        </row>
+                        <row>
+                            <entry>topSet</entry>
+                            <entry>maximální váha, kterou daná osobou je schopna zdvihnout</entry>
+                        </row>
+                        <row>
+                            <entry>backOffSet</entry>
+                            <entry>60% váhy z top set části</entry>
+                        </row>
+                        <row>
+                            <entry>series</entry>
+                            <entry>počet sérií</entry>
+                        </row>
+                        <row>
+                            <entry>reps</entry>
+                            <entry>počet opakování</entry>
+                        </row>
+                        <row>
+                            <entry>cardio</entry>
+                            <entry>element, který obsahuje podelementy, které popisují daný cardio
+                                cvik</entry>
+                        </row>
+                        <row>
+                            <entry>period</entry>
+                            <entry>časová délka cardio cviku</entry>
+                        </row>
+                        <row>
+                            <entry>speed</entry>
+                            <entry>rychlost cardio cviku</entry>
+                        </row>
+                        <row>
+                            <entry>incline</entry>
+                            <entry>sklon cardio cviku</entry>
+                        </row>
+                        <row>
+                            <entry>summary</entry>
+                            <entry>element, který shrne celý split s cardiem a obsahuje podelementy,
+                                které popisují dané shrnutí</entry>
+                        </row>
+                        <row>
+                            <entry>estimatedTime</entry>
+                            <entry>předpokládaný čas dokončení daného tréninku</entry>
+                        </row>
+                        <row>
+                            <entry>quantity</entry>
+                            <entry>počet cvičení</entry>
+                        </row>
+                        <row>
+                            <entry>primaryMuscle</entry>
+                            <entry>svaly, které byly nejvíce vytíženy</entry>
+                        </row>
+                        <row>
+                            <entry>muscleTargetedPhoto</entry>
+                            <entry>element s atributem src obsahující fotku nejvíce vytížených
+                                svalů</entry>
+                        </row>
+                    </tbody>
+                </tgroup>
+            </table>
+        </sect1>
+        <sect1>
+            <title>Ukázkový XML</title>
+            <para>Ukázkový dokument zobrazujíci jednu osobu a první 4 dny jednoho konkrétního plánu
+                z tréninkových plánu.</para>
+            <example>
+                <title>Plán Le Mans</title>
+                <programlisting language="xml">
+                    <![CDATA[
+    <person oid="1">
+        <forename>Kevin</forename>
+        <surname>Nguyen</surname>
+        <age>20</age>
+        <height>176</height>
+        <weight>82</weight>
+        <goal>lower body and maintain muscle mass</goal>
+        <profession>student</profession>
+        <frequencyInAWeek>6</frequencyInAWeek>
+        <experience>1</experience>
+        <givenPlan>
+            <name>Le Mans</name>
+        </givenPlan>
+    </person>
+    <plan pid="1">
+        <name>Le Mans</name>
+        <start>2024-04-29</start>
+        <end>2024-05-05</end>
+        <day date="2024-04-29">
+            <training split="push">
+                <exercise cid="1">
+                    <name>Cable Lateral Raise</name>
+                    <exercisePhoto src="exercises/cable_lateral_raise.png"/>
+                    <muscles>Lateral Deltoid</muscles>
+                    <musclesPhoto src="muscles/cable_lateral_raise.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="2">
+                    <name>Dumbbell Shoulder Press</name>
+                    <exercisePhoto src="exercises/dumbbell_shoulder_press.png"/>
+                    <muscles>Front Deltoid</muscles>
+                    <musclesPhoto src="muscles/dumbbell_shoulder_press.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="3">
+                    <name>Dumbbell Rear Delt Fly</name>
+                    <exercisePhoto src="exercises/dumbbell_rear_delt_fly.png"/>
+                    <muscles>Rear Deltoid</muscles>
+                    <musclesPhoto src="muscles/dumbbell_rear_delt_fly.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="4">
+                    <name>Smith Machine Incline Bench Press</name>
+                    <exercisePhoto src="exercises/smith_machine_incline_bench_press.png"/>
+                    <muscles>Upper Chest</muscles>
+                    <musclesPhoto src="muscles/smith_machine_incline_bench_press.png"/>
+                    <warmUp>
+                        <series>3</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="5">
+                    <name>Dumbbell Bench Press</name>
+                    <exercisePhoto src="exercises/dumbbell_bench_press.png"/>
+                    <muscles>Chest</muscles>
+                    <musclesPhoto src="muscles/dumbbell_bench_press.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="6">
+                    <name>Cable Chest Fly</name>
+                    <exercisePhoto src="exercises/cable_chest_fly.png"/>
+                    <muscles>Chest</muscles>
+                    <musclesPhoto src="muscles/cable_chest_fly.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="7">
+                    <name>Tricep Pushdown</name>
+                    <exercisePhoto src="exercises/tricep_pushdown.png"/>
+                    <muscles>Triceps</muscles>
+                    <musclesPhoto src="muscles/tricep_pushdown.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="8">
+                    <name>Overhead Tricep Extension Machine</name>
+                    <exercisePhoto src="exercises/overhead_tricep_extension_machine.png"/>
+                    <muscles>Triceps</muscles>
+                    <musclesPhoto src="muscles/overhead_tricep_extension_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>2</estimatedTime>
+                    <quantity>8</quantity>
+                    <primaryMuscle>Lateral Deltoid</primaryMuscle>
+                    <primaryMuscle>Front Deltoid</primaryMuscle>
+                    <primaryMuscle>Rear Deltoid</primaryMuscle>
+                    <primaryMuscle>Upper Chest</primaryMuscle>
+                    <primaryMuscle>Chest</primaryMuscle>
+                    <primaryMuscle>Triceps</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_push.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-04-30">
+            <training split="pull">
+                <exercise cid="9">
+                    <name>Lat Pulldown Machine</name>
+                    <exercisePhoto src="exercises/lat_pulldown_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/lat_pulldown_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="10">
+                    <name>Barbell Row</name>
+                    <exercisePhoto src="exercises/barbell_row.png"/>
+                    <muscles>Lats, Trapezius</muscles>
+                    <musclesPhoto src="muscles/barbell_row.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="11">
+                    <name>Seated Row Machine</name>
+                    <exercisePhoto src="exercises/seated_row_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/seated_row_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="12">
+                    <name>Cable Face Pull</name>
+                    <exercisePhoto src="exercises/cable_face_pull.png"/>
+                    <muscles>Upper Back, Rear Deltoid, Trapezius</muscles>
+                    <musclesPhoto src="muscles/cable_face_pull.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="13">
+                    <name>Preacher Curl Machine</name>
+                    <exercisePhoto src="exercises/preacher_curl_machine.png"/>
+                    <muscles>Biceps</muscles>
+                    <musclesPhoto src="muscles/preacher_curl_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="14">
+                    <name>Hammer Curl</name>
+                    <exercisePhoto src="exercises/hammer_curl.png"/>
+                    <muscles>Brachioradialis, foreamrs</muscles>
+                    <musclesPhoto src="muscles/hammer_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Inclice Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1.5</estimatedTime>
+                    <quantity>6</quantity>
+                    <primaryMuscle>Lats</primaryMuscle>
+                    <primaryMuscle>Trapezius</primaryMuscle>
+                    <primaryMuscle>Rear Deltoid</primaryMuscle>
+                    <primaryMuscle>Biceps</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_pull.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-05-01">
+            <training split="legs">
+                <exercise cid="15">
+                    <name>Barbell Squat</name>
+                    <exercisePhoto src="exercises/barbell_squat.png"/>
+                    <muscles>Quads</muscles>
+                    <musclesPhoto src="muscles/barbell_squat.png"/>
+                    <warmUp>
+                        <series>3</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="16">
+                    <name>Seated Legs Extension Machine</name>
+                    <exercisePhoto src="exercises/seated_legs_extension_machine.png"/>
+                    <muscles>Quads</muscles>
+                    <musclesPhoto src="muscles/seated_legs_extension_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="17">
+                    <name>Cable Leg Curl</name>
+                    <exercisePhoto src="exercises/cable_leg_curl.png"/>
+                    <muscles>Harmstrings</muscles>
+                    <musclesPhoto src="muscles/cable_leg_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="18">
+                    <name>Adductor Machine</name>
+                    <exercisePhoto src="exercises/adductor_machine.png"/>
+                    <muscles>Inner thighs</muscles>
+                    <musclesPhoto src="muscles/adductor_machine.png"/>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="19">
+                    <name>Abductor Machine</name>
+                    <exercisePhoto src="exercises/abductor_machine.png"/>
+                    <muscles>Outer thighs</muscles>
+                    <musclesPhoto src="muscles/abductor_machine.png"/>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="20">
+                    <name>Cable Forearm Curls</name>
+                    <exercisePhoto src="exercises/cable_forearm_curls.png"/>
+                    <muscles>Foreamrs</muscles>
+                    <musclesPhoto src="muscles/cable_forearm_curls.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="21">
+                    <name>Cable Reverse Wrist Curl</name>
+                    <exercisePhoto src="exercises/cable_reverse_wrist_curl.png"/>
+                    <muscles>Foreamrs</muscles>
+                    <musclesPhoto src="muscles/cable_reverse_wrist_curl.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1.83</estimatedTime>
+                    <quantity>7</quantity>
+                    <primaryMuscle>Quads</primaryMuscle>
+                    <primaryMuscle>Harmstrings</primaryMuscle>
+                    <primaryMuscle>Thighs</primaryMuscle>
+                    <primaryMuscle>Foreamrs</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_legs.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-05-02">
+            <rest>rest day</rest>
+        </day>
+                    ]]>
+                </programlisting>
+            </example>
+        </sect1>
+    </chapter>
+    <chapter>
+        <title>Schémy XML</title>
+        <para>V této části sa nachádzí definované struktury XML dokumentu. Většina struktur jsou
+            definovaná pomocí XML Schema, dvě pravidla jsou definované pomocí Schematronu.</para>
+        <sect1>
+            <title>XML Schema</title>
+            <para><indexterm><primary>XML Schema</primary></indexterm>XML schema sa nachází v
+                souboru <filename>treninkovyPlan.xsd</filename>. Vybral jsem dvě ukázky. První je
+                definování struktury pro element <code>split</code>, kde si môžeme vybrat jednu ze
+                čtyř zadaných možností.</para>
+            <example>
+                <title>Definování struktury elementu split.</title>
+                <programlisting language="xml">
+            <![CDATA[
+    <xs:simpleType name="splitType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="push"/>
+            <xs:enumeration value="pull"/>
+            <xs:enumeration value="legs"/>
+            <xs:enumeration value="mixed"/>
+        </xs:restriction>
+    </xs:simpleType>
+                    ]]>        
+            </programlisting>
+            </example>
+            <para>Druhou ukázka je definování struktury pro element <code>trainingPlan</code> a
+                    <code>plan</code>, kde element <code>plan</code> je podelementom elementu
+                    <emphasis role="italic">trainingPlan</emphasis><code>trainingPlan</code>.</para>
+            <example>
+                <title>Definování struktur elementů trainingPlan a plan</title>
+                <programlisting language="xml">
+            <![CDATA[
+       <xs:complexType name="trainingPlanType">
+        <xs:sequence>
+            <xs:element name="person" type="personType" minOccurs="1" maxOccurs="10"/>
+            <xs:element name="plan" type="planType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>     
+            
+            
+    <xs:complexType name="plansType">
+       <xs:sequence>
+           <xs:element name="name" type="nonEmptyString"/>
+       </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="planType">
+        <xs:complexContent>
+            <xs:extension base="plansType">
+                <xs:sequence>
+                    <xs:element name="start" type="dateType"/>
+                    <xs:element name="end" type="dateType"/>
+                    <xs:element name="day" type="dayType" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="pid" type="xs:int" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+                    ]]>
+                </programlisting>
+            </example>
+        </sect1>
+        <sect1>
+            <title>Schematron</title>
+            <para><indexterm><primary>Schematron</primary></indexterm>Schematron sa nachází v
+                souboru <filename>treninkovyPlan.sch</filename>. Jsou vybrané dvě ukázky. První je
+                definování pravidla pro element <code>start</code>, pro který platí, že daný datum
+                nesmí být za element <code>end</code></para>
+            <example>
+                <title>Definování pravidla pro výběr datumu v počátku plánu</title>
+                <programlisting language="xml">
+            <![CDATA[
+    <sch:pattern>
+        <sch:title>Date check of start and end</sch:title>
+
+        <sch:rule context="t:plan">
+            <sch:assert test="t:start &lt; t:end"> Date start of plan must be before date end </sch:assert>
+
+            <sch:assert test="t:start &lt;= current-date()"> Date start can't be in the future. </sch:assert>
+
+        </sch:rule>
+    </sch:pattern>
+                    ]]>    
+                </programlisting>
+            </example>
+            <para>Druhá ukázka je definování pravidla pro elementy <code>series</code> a
+                    <code>reps</code>, pro které platí, že počet <code>series</code> nesmí být větší
+                jak počet <code>reps</code>.</para>
+            <example>
+                <title>Definování pravidla pro nepřekročení počtu opakování počtem sérií</title>
+                <programlisting language="xml">
+            <![CDATA[
+    <sch:pattern>
+        <sch:title>Check series and reps</sch:title>
+
+        <sch:rule context="t:warmUp">
+            <sch:assert test="xs:integer(t:series) &lt;= xs:integer(t:reps)"> Number of series must lower than number of reps
+            </sch:assert>
+        </sch:rule>
+        
+        <sch:rule context="t:topSet">
+            <sch:assert test="xs:integer(t:series) &lt;= xs:integer(t:reps)"> Number of series must lower than number of reps
+            </sch:assert>
+        </sch:rule>
+        
+        <sch:rule context="t:backOffSet">
+            <sch:assert test="xs:integer(t:series) &lt;= xs:integer(t:reps)"> Number of series must lower than number of reps
+            </sch:assert>
+        </sch:rule>
+        
+    </sch:pattern>
+                    ]]>    
+            </programlisting>
+            </example>
+        </sect1>
+    </chapter>
+    <chapter>
+        <title>Transformace</title>
+        <para>V této části se nachází transformace XML dokumentu do html stránky a pdf souboru.
+                    <indexterm><primary>Transformace</primary></indexterm>Transformace do HTML byla
+            tvořena pomocí jazyka XSLT a transformace do PDF za pomocí jazyka XSL-FO.</para>
+        <sect1>
+            <title>Transformace do HTML</title>
+            <para>Nachází se v souboru <filename>treninkovyPlan.xslt</filename>. Jsou vybrané dvě
+                ukázky. První je vytvoření struktury pro tabulku, v které sa nachází záznam
+                jednotlivých tréninků v daných dnech. Struktura je vytvořená pomocí elementu
+                    <code>template</code>. V obou situacích jsou použité totožné šablony, liší se
+                však zápisem vzhledem k tomu, že syntax XSL-FO je trochu náročnější. Celkově bylo
+                vytvořeno 3 HTML stránek, jedna vypisuje záznam všech osob s přiurčenými plány v
+                tréninkovém plánu a dále jsou stránky jednotlivých plánu. </para>
+            <example>
+                <title>Definování šablony pro tabulku tréninku v daném dnu pro daného
+                    člověka</title>
+                <programlisting language="xml">
+                <![CDATA[
+    <xsl:template match="t:plan/t:day" mode="exercise_table">
+
+        <h2> Day <xsl:text> </xsl:text>
+            <xsl:value-of select="@date/format-date(xs:date(.),'[D01].[M01].[Y]')"/>
+        </h2>
+
+        <h3>
+            <xsl:value-of select="t:training/@split"/>
+        </h3>
+
+        <xsl:choose>
+            <xsl:when test="t:rest">
+                <h3>
+                    <xsl:value-of select="t:rest"/>
+                </h3>
+            </xsl:when>
+            <xsl:otherwise>
+                <table class="roster">
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Photo</th>
+                        <th>Targeted Muscles</th>
+                        <th>Photo</th>
+                        <th>Warm Up <table class="reps">
+                                <tr>
+                                    <th>Series</th>
+                                    <th>Reps</th>
+                                </tr>
+                            </table>
+                        </th>
+                        <th>Top Set <table class="reps">
+                                <tr>
+                                    <th>Series</th>
+                                    <th>Reps</th>
+                                </tr>
+                            </table>
+                        </th>
+                        <th>Back Off Set <table class="reps">
+                                <tr>
+                                    <th>Series</th>
+                                    <th>Reps</th>
+                                </tr>
+                            </table></th>
+                    </tr>
+
+
+
+                    <xsl:for-each-group select="t:training/t:exercise" group-by="t:name">
+                        <tr>
+                            <td>
+                                <xsl:value-of select="t:name"/>
+                            </td>
+                            <td>
+                                <xsl:apply-templates select="t:exercisePhoto" mode="exercisePhoto"/>
+                            </td>
+                            <td>
+                                <xsl:value-of select="t:muscles"/>
+                            </td>
+                            <td>
+                                <xsl:apply-templates select="t:musclesPhoto" mode="musclesPhoto"/>
+                            </td>
+                            <td>
+                                <table class="reps">
+                                    <tr>
+                                        <td>
+                                            <xsl:value-of select="t:warmUp/t:series"/>
+                                        </td>
+                                        <td>
+                                            <xsl:value-of select="t:warmUp/t:reps"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table class="reps">
+                                    <tr>
+                                        <td>
+                                            <xsl:value-of select="t:topSet/t:series"/>
+                                        </td>
+                                        <td>
+                                            <xsl:value-of select="t:topSet/t:reps"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table class="reps">
+                                    <tr>
+                                        <td>
+                                            <xsl:value-of select="t:backOffSet/t:series"/>
+                                        </td>
+                                        <td>
+                                            <xsl:value-of select="t:backOffSet/t:reps"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </xsl:for-each-group>
+                </table>
+                <table class="roster">
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Photo</th>
+                        <th>Period</th>
+                        <th>Speed</th>
+                        <th>Incline</th>
+                    </tr>
+                    
+                    <h3>Cardio</h3>
+                    
+                    <xsl:for-each-group select="t:training/t:cardio" group-by="t:name">
+                        <tr>
+                            <td>
+                                <xsl:value-of select="t:name"/>
+                            </td>
+                            <td>
+                                <xsl:apply-templates select="t:exercisePhoto" mode="cardioPhoto"/>
+                            </td>
+                            <td>
+                                <xsl:value-of select="t:period"/> minutes
+                            </td>
+                            <td>
+                                <xsl:value-of select="t:speed"/> km/h
+                            </td>
+                            <td>
+                                <xsl:value-of select="t:incline"/> %
+                            </td>
+                        </tr>
+                    </xsl:for-each-group>
+                    
+                </table>
+                
+                <table class="roster">
+                    <tr>
+                        <th>Estimated Time</th>
+                        <th>Number of exercises</th>
+                        <th>Targeted Muscles</th>
+                        <th>Photo</th>
+                    </tr>
+                    
+                    
+                    <h3>Summary</h3>
+                    
+                    <xsl:for-each select="t:training/t:summary">
+                        <tr>
+                            <td>
+                                <xsl:value-of select="t:estimatedTime"/> hours
+                            </td>
+                            <td>
+                                <xsl:value-of select="t:quantity"/>
+                            </td>
+                            <td>
+                                <xsl:value-of select="t:primaryMuscle"/>
+                            </td>
+                            <td>
+                                <xsl:apply-templates select="t:musclesTargetedPhoto" mode="musclesTargetedPhoto"/>
+                            </td>
+                        </tr>
+                        
+                    </xsl:for-each>
+                </table>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+                    ]]>
+            </programlisting>
+            </example>
+            <para>Druhou ukázkou je vytvoření šablony, která vytvoří celkový plán pro danou osobu,
+                kterou ji byl přiřazen. Šablona je vytvořená tak jako v první ukázce pomocí elementu
+                    <code>template</code>. </para>
+            <example>
+                <title>Definování šablony pro celkový plán pro danou osobu</title>
+                <programlisting language="xml">
+                <![CDATA[
+    <xsl:template match="t:plan">
+        <xsl:result-document href="{generate-id(t:name)}.html" format="html5">
+            <html lang="en">
+                <head>
+                    <meta name="author" content="Kevin Nguyen"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    <link rel="stylesheet" href="plan.css" type="text/css"/>
+                    <title>
+                        <xsl:value-of select="t:name"/>
+                    </title>
+                </head>
+                <body>
+                    <h1>
+                        <a href="treninkovyPlan.html">Training Plan</a>
+                    </h1>
+                    <h2>
+                        <xsl:value-of select="t:name"/>
+                    </h2>
+                    <table class="dates">
+                        <tr>
+                            <td>Start</td>
+                            <td>
+                                <xsl:apply-templates select="t:start" mode="date"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>End</td>
+                            <td>
+                                <xsl:apply-templates select="t:end" mode="date"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <xsl:apply-templates select="t:day" mode="exercise_table"/>
+                    <footer>&#xA9;2024 Kevin Nguyen</footer>
+                </body>
+            </html>
+        </xsl:result-document>
+    </xsl:template>
+                    ]]>
+            </programlisting>
+            </example>
+        </sect1>
+        <sect1>
+            <title>Transformace do PDF</title>
+            <para>Tato část sa nachází v souboru <filename>treninkovyPlan_fo.xsl</filename>. Jsou
+                vybrány dvě ukázky. První ukázka je šablona tabulky tréninku, které se nachází v
+                jednotlivých dnech v jednotlivém plánu. Šablona je vytvořená pomocou elementu
+                    <code>template</code>. Před samotnou transformací byl nejdříve vytvořený soubor
+                    <filename>treninkovyPlan.fo</filename>, v kterém je možno zjistit případné
+                chyby, které se vyskytly při psaní kódu.</para>
+            <example>
+                <title>Definice šablony tabulky tréniku v jednotlivých dnech</title>
+                <programlisting language="xml">
+                <![CDATA[
+    <xsl:template match="day" mode="exercise_table">
+        <fo:block font-size="20px" font-weight="bold" margin-top="0.5cm" margin-bottom="0.2cm">
+                Day<xsl:text> </xsl:text><xsl:value-of
+                select="@date/format-date(xs:date(.), '[D01].[M01].[Y]')"/>
+        </fo:block>
+
+        <xsl:choose>
+            <xsl:when test="rest">
+                <fo:block font-size="15px" font-weight="bold" margin-top="0.5cm"
+                    margin-bottom="0.5cm">Rest day</fo:block>
+            </xsl:when>
+            <xsl:otherwise>
+                <fo:block font-size="15px" font-weight="bold" margin-top="0.5cm"
+                    margin-bottom="0.5cm"> Split <xsl:text> </xsl:text>
+                    <xsl:value-of select="training/@split"/>
+                </fo:block>
+                <fo:table border="0.06cm solid black">
+                    <fo:table-column column-width="3cm"/>
+                    <fo:table-column column-width="2cm"/>
+                    <fo:table-column column-width="3cm"/>
+                    <fo:table-column column-width="2cm"/>
+                    <fo:table-column column-width="2cm"/>
+                    <fo:table-column column-width="2cm"/>
+                    <fo:table-column column-width="2cm"/>
+                    <fo:table-header>
+                        <fo:table-row border="0.03cm solid black">
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Exercise</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Photo</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Targeted Muscles</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Photo</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Warm Up (series/reps)</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Top Set (series/reps)</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Back Off Set (series/reps)</fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                        <xsl:for-each select="training/exercise">
+                            <fo:table-row>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="name"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:apply-templates select="exercisePhoto"
+                                            mode="exercisePhoto"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="muscles"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:apply-templates select="musclesPhoto"
+                                            mode="musclesPhoto"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="warmUp/series"/>
+                                        <xsl:text>    </xsl:text>
+                                        <xsl:value-of select="warmUp/reps"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="topSet/series"/>
+                                        <xsl:text> </xsl:text>
+                                        <xsl:value-of select="topSet/reps"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="backOffSet/series"/>
+                                        <xsl:text> </xsl:text>
+                                        <xsl:value-of select="backOffSet/reps"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </xsl:for-each>
+                    </fo:table-body>
+                </fo:table>
+                
+                <fo:block font-size="15px" font-weight="bold" margin-top="0.5cm"
+                    margin-bottom="0.5cm">Cardio</fo:block>
+                <fo:table border="0.06cm solid black">
+                    <fo:table-column column-width="3.2cm"/>
+                    <fo:table-column column-width="3.2cm"/>
+                    <fo:table-column column-width="3.2cm"/>
+                    <fo:table-column column-width="3.2cm"/>
+                    <fo:table-column column-width="3.2cm"/>
+                    <fo:table-header>
+                        <fo:table-row border="0.03cm solid black">
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Exercise</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Photo</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Period</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Speed</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Incline</fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                        <xsl:for-each select="training/cardio">
+                            <fo:table-row>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="name"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:apply-templates select="exercisePhoto"
+                                            mode="cardioPhoto"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="period"/> minutes
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="speed"/> km/h
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="incline"/> %
+                                    </fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </xsl:for-each>
+                    </fo:table-body>
+                </fo:table>
+                
+                <fo:block font-size="15px" font-weight="bold" margin-top="0.5cm"
+                    margin-bottom="0.5cm">Summary</fo:block>
+                <fo:table border="0.06cm solid black">
+                    <fo:table-column column-width="4cm"/>
+                    <fo:table-column column-width="4cm"/>
+                    <fo:table-column column-width="3cm"/>
+                    <fo:table-column column-width="5cm"/>
+                    <fo:table-header>
+                        <fo:table-row border="0.03cm solid black">
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Estimated Time</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Number Of Exercises</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Targeted Muscles</fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell border="0.03cm solid black" text-align="center">
+                                <fo:block font-weight="bold">Photo</fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                        <xsl:for-each select="training/summary">
+                            <fo:table-row>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="estimatedTime"/> hours
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="quantity"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:value-of select="primaryMuscle"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell padding-top="0.3cm" text-align="center"
+                                    border="0.03cm solid black" height="2cm">
+                                    <fo:block>
+                                        <xsl:apply-templates select="musclesTargetedPhoto"
+                                            mode="musclesTargetedPhoto"/>
+                                    </fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </xsl:for-each>
+                    </fo:table-body>
+                </fo:table>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+                    ]]>
+            </programlisting>
+            </example>
+            <para>Druhou ukázkou je vytvoření šablony, která vytvoří celkový plán pro danou osobu,
+                kterou ji byl přiřazen. Šablona je vytvořená tak jako v první ukázce pomocí elementu
+                    <code>template</code>. </para>
+            <example>
+                <title>Zadefinovanie šablóny pre výpis počtu Stanley Cup a jednotlivých rokov, v
+                    ktorých daný tím vyhral</title>
+                <programlisting language="xml">
+                <![CDATA[
+    <xsl:template match="plan">
+        <fo:block id="{generate-id(.)}" break-before="page" font-weight="bold" font-size="30px">
+            <xsl:value-of select="name"/>
+        </fo:block>
+        <fo:table>
+            <fo:table-body>
+                <fo:table-row border="0.03cm solid black">
+                    <fo:table-cell border="0.03cm solid black">
+                        <fo:block font-weight="bold">Start</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                        <fo:block>
+                            <xsl:apply-templates select="start" mode="date"/>
+                        </fo:block>
+                    </fo:table-cell>
+                </fo:table-row>
+                <fo:table-row border="0.03cm solid black">
+                    <fo:table-cell border="0.03cm solid black">
+                        <fo:block font-weight="bold">End</fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                        <fo:block>
+                            <xsl:apply-templates select="end" mode="date"/>
+                        </fo:block>
+                    </fo:table-cell>
+                </fo:table-row>
+            </fo:table-body>
+        </fo:table>
+        <fo:block>
+            <xsl:apply-templates select="day" mode="exercise_table"/>
+        </fo:block>
+    </xsl:template>
+                    ]]>
+            </programlisting>
+            </example>
+        </sect1>
+    </chapter>
+    <chapter>
+        <title>CSS</title>
+        <para>Pomocí jazyka <indexterm><primary>CSS</primary></indexterm>CSS jsou formátované HTML
+            výstupy. Jeden výstup je pro hlavní stránku, kde se vyskytují osoby s přiřazeným plánem
+            a druhý, kde mají jednotlivé plány svoje vlastní HTML stránku. </para>
+        <sect1>
+            <title>Osoby v tréninkovém plánu</title>
+            <para>Ukázka souboru <filename>treninkovyPlan.css</filename>, který upravuje hlavní
+                stránku s osobami.</para>
+            <example>
+                <title>Ukázka souboru treninkovyPlan.css</title>
+                <programlisting language="css">
+                <![CDATA[
+    * {
+    font-family: "Inconsolata", monospace;
+    font-weight: 500;
+    font-style: normal;
+    color: #130e0e;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+h1 {
+    position: sticky;
+    top: 0px;
+    padding: 0px 20px;
+    background-color: white;
+    height: 40px;
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+h3 {
+    font-size: 150%;
+    color: black;
+    font-weight: bold;
+
+}
+
+
+table td:nth-child(2) {
+    padding-left: 200px;
+}
+
+table td:first-child {
+    font-weight: bold;
+}
+
+
+table {
+    display: block;
+    border: 2.5px solid gray;
+    margin: 20px auto;
+    padding: 20px 20px;
+    width: 800px;
+
+}
+
+table td a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    position: static;
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+    bottom: 0;
+    width: 100%;
+    padding: 0.3em 0.7em 0.3em 0.7em;
+    margin-left: 0
+}
+
+                    ]]>
+            </programlisting>
+            </example>
+        </sect1>
+        <sect1>
+            <title>Stránka plánu</title>
+            <para>Ukázka souboru <filename>plan.css</filename>, který upravuje stránku pro konkrétní
+                plán.</para>
+            <example>
+                <title>Ukázka souboru plan.css</title>
+                <programlisting language="css">
+                <![CDATA[
+   * {
+    font-family: "Inconsolata", monospace;
+    font-weight: 500;
+    font-style: normal;
+    color: #130e0e;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+a {
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+h1 {
+    position: sticky;
+    top: 0px;
+    padding: 0px 20px;
+    background-color: white;
+    height: 40px;
+}
+
+h2 {
+    padding-left: 10px;
+}
+
+h2:nth-child(2) {
+    font-weight: bold;
+    color: black;
+
+}
+
+h3 {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+table,
+th {
+    border: 2.5px solid grey;
+    border-collapse: collapse;
+}
+
+.dates td:nth-child(1) {
+    font-weight: bold;
+}
+
+.dates td {
+    border: 2.5px solid grey;
+    border-collapse: collapse;
+}
+
+table .roster,
+.reps {
+    display: block;
+    text-align: center;
+    width: 100%;
+
+}
+
+td {
+    border: 2.5px solid grey;
+}
+
+table {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.muscles {
+    width: 15em;
+    display: block;
+    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.exercise {
+    width: 20em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.roster th {
+    font-weight: bold;
+}
+
+
+.reps {
+    display: table;
+    border: none;
+}
+
+
+.reps th {
+    border: none;
+}
+
+.reps td {
+    text-align: center;
+    border: none;
+}
+
+.roster td {
+    text-align: center;
+
+}
+
+.roster td {
+    width: 13em;
+}
+
+.roster td:first-child {
+    font-weight: bold;
+}
+
+.reps td:first-child {
+    font-weight: 300;
+}
+
+footer {
+    position: static;
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+    bottom: 0;
+    width: 100%;
+    padding: 0.3em 0.7em 0.3em 0.7em;
+    margin-left: 0
+}
+                    ]]>
+            </programlisting>
+            </example>
+        </sect1>
+    </chapter>
+</book>

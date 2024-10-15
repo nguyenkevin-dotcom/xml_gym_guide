@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="treninkovyPlan.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<trainingPlan xmlns="urn:nguyen:treninkovyPlan"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:nguyen:treninkovyPlan treninkovyPlan.xsd">
+    <person oid="1">
+        <forename>Kevin</forename>
+        <surname>Nguyen</surname>
+        <age>20</age>
+        <height>176</height>
+        <weight>82</weight>
+        <goal>lower body and maintain muscle mass</goal>
+        <profession>student</profession>
+        <frequencyInAWeek>6</frequencyInAWeek>
+        <experience>1</experience>
+        <givenPlan>
+            <name>Le Mans</name>
+        </givenPlan>
+    </person>
+    <person oid="2">
+        <forename>Mark</forename>
+        <surname>Kowalski</surname>
+        <age>24</age>
+        <height>172</height>
+        <weight>68</weight>
+        <goal>stay healthy</goal>
+        <profession>employed</profession>
+        <frequencyInAWeek>3</frequencyInAWeek>
+        <experience>0.1</experience>
+        <givenPlan>
+            <name>Monaka</name>
+        </givenPlan>
+    </person>
+    <plan pid="1">
+        <name>Le Mans</name>
+        <start>2024-04-29</start>
+        <end>2024-05-05</end>
+        <day date="2024-04-29">
+            <training split="push">
+                <exercise cid="1">
+                    <name>Cable Lateral Raise</name>
+                    <exercisePhoto src="exercises/cable_lateral_raise.png"/>
+                    <muscles>Lateral Deltoid</muscles>
+                    <musclesPhoto src="muscles/cable_lateral_raise.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="2">
+                    <name>Dumbbell Shoulder Press</name>
+                    <exercisePhoto src="exercises/dumbbell_shoulder_press.png"/>
+                    <muscles>Front Deltoid</muscles>
+                    <musclesPhoto src="muscles/dumbbell_shoulder_press.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="3">
+                    <name>Dumbbell Rear Delt Fly</name>
+                    <exercisePhoto src="exercises/dumbbell_rear_delt_fly.png"/>
+                    <muscles>Rear Deltoid</muscles>
+                    <musclesPhoto src="muscles/dumbbell_rear_delt_fly.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="4">
+                    <name>Smith Machine Incline Bench Press</name>
+                    <exercisePhoto src="exercises/smith_machine_incline_bench_press.png"/>
+                    <muscles>Upper Chest</muscles>
+                    <musclesPhoto src="muscles/smith_machine_incline_bench_press.png"/>
+                    <warmUp>
+                        <series>3</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="5">
+                    <name>Dumbbell Bench Press</name>
+                    <exercisePhoto src="exercises/dumbbell_bench_press.png"/>
+                    <muscles>Chest</muscles>
+                    <musclesPhoto src="muscles/dumbbell_bench_press.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="6">
+                    <name>Cable Chest Fly</name>
+                    <exercisePhoto src="exercises/cable_chest_fly.png"/>
+                    <muscles>Chest</muscles>
+                    <musclesPhoto src="muscles/cable_chest_fly.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="7">
+                    <name>Tricep Pushdown</name>
+                    <exercisePhoto src="exercises/tricep_pushdown.png"/>
+                    <muscles>Triceps</muscles>
+                    <musclesPhoto src="muscles/tricep_pushdown.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="8">
+                    <name>Overhead Tricep Extension Machine</name>
+                    <exercisePhoto src="exercises/overhead_tricep_extension_machine.png"/>
+                    <muscles>Triceps</muscles>
+                    <musclesPhoto src="muscles/overhead_tricep_extension_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>2</estimatedTime>
+                    <quantity>8</quantity>
+                    <primaryMuscle>Lateral Deltoid,</primaryMuscle>
+                    <primaryMuscle>Front Deltoid,</primaryMuscle>
+                    <primaryMuscle>Rear Deltoid,</primaryMuscle>
+                    <primaryMuscle>Upper Chest,</primaryMuscle>
+                    <primaryMuscle>Chest,</primaryMuscle>
+                    <primaryMuscle>Triceps</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_push.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-04-30">
+            <training split="pull">
+                <exercise cid="9">
+                    <name>Lat Pulldown Machine</name>
+                    <exercisePhoto src="exercises/lat_pulldown_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/lat_pulldown_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="10">
+                    <name>Barbell Row</name>
+                    <exercisePhoto src="exercises/barbell_row.png"/>
+                    <muscles>Lats, Trapezius</muscles>
+                    <musclesPhoto src="muscles/barbell_row.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="11">
+                    <name>Seated Row Machine</name>
+                    <exercisePhoto src="exercises/seated_row_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/seated_row_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="12">
+                    <name>Cable Face Pull</name>
+                    <exercisePhoto src="exercises/cable_face_pull.png"/>
+                    <muscles>Upper Back, Rear Deltoid, Trapezius</muscles>
+                    <musclesPhoto src="muscles/cable_face_pull.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="13">
+                    <name>Preacher Curl Machine</name>
+                    <exercisePhoto src="exercises/preacher_curl_machine.png"/>
+                    <muscles>Biceps</muscles>
+                    <musclesPhoto src="muscles/preacher_curl_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="14">
+                    <name>Hammer Curl</name>
+                    <exercisePhoto src="exercises/hammer_curl.png"/>
+                    <muscles>Brachioradialis, foreamrs</muscles>
+                    <musclesPhoto src="muscles/hammer_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Inclice Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1.5</estimatedTime>
+                    <quantity>6</quantity>
+                    <primaryMuscle>Lats,</primaryMuscle>
+                    <primaryMuscle>Trapezius,</primaryMuscle>
+                    <primaryMuscle>Rear Deltoid,</primaryMuscle>
+                    <primaryMuscle>Biceps</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_pull.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-05-01">
+            <training split="legs">
+                <exercise cid="15">
+                    <name>Barbell Squat</name>
+                    <exercisePhoto src="exercises/barbell_squat.png"/>
+                    <muscles>Quads</muscles>
+                    <musclesPhoto src="muscles/barbell_squat.png"/>
+                    <warmUp>
+                        <series>3</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="16">
+                    <name>Seated Legs Extension Machine</name>
+                    <exercisePhoto src="exercises/seated_legs_extension_machine.png"/>
+                    <muscles>Quads</muscles>
+                    <musclesPhoto src="muscles/seated_legs_extension_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="17">
+                    <name>Cable Leg Curl</name>
+                    <exercisePhoto src="exercises/cable_leg_curl.png"/>
+                    <muscles>Harmstrings</muscles>
+                    <musclesPhoto src="muscles/cable_leg_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="18">
+                    <name>Adductor Machine</name>
+                    <exercisePhoto src="exercises/adductor_machine.png"/>
+                    <muscles>Inner thighs</muscles>
+                    <musclesPhoto src="muscles/adductor_machine.png"/>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="19">
+                    <name>Abductor Machine</name>
+                    <exercisePhoto src="exercises/abductor_machine.png"/>
+                    <muscles>Outer thighs</muscles>
+                    <musclesPhoto src="muscles/abductor_machine.png"/>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="20">
+                    <name>Cable Forearm Curls</name>
+                    <exercisePhoto src="exercises/cable_forearm_curls.png"/>
+                    <muscles>Foreamrs</muscles>
+                    <musclesPhoto src="muscles/cable_forearm_curls.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="21">
+                    <name>Cable Reverse Wrist Curl</name>
+                    <exercisePhoto src="exercises/cable_reverse_wrist_curl.png"/>
+                    <muscles>Foreamrs</muscles>
+                    <musclesPhoto src="muscles/cable_reverse_wrist_curl.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1.83</estimatedTime>
+                    <quantity>7</quantity>
+                    <primaryMuscle>Quads,</primaryMuscle>
+                    <primaryMuscle>Harmstrings,</primaryMuscle>
+                    <primaryMuscle>Thighs,</primaryMuscle>
+                    <primaryMuscle>Foreamrs</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_legs.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-05-02">
+            <rest>rest day</rest>
+        </day>
+        <day date="2024-05-03">
+            <training split="push">
+                <exercise cid="1">
+                    <name>Cable Lateral Raise</name>
+                    <exercisePhoto src="exercises/cable_lateral_raise.png"/>
+                    <muscles>Lateral Deltoid</muscles>
+                    <musclesPhoto src="muscles/cable_lateral_raise.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="2">
+                    <name>Dumbbell Shoulder Press</name>
+                    <exercisePhoto src="exercises/dumbbell_shoulder_press.png"/>
+                    <muscles>Front Deltoid</muscles>
+                    <musclesPhoto src="muscles/dumbbell_shoulder_press.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="3">
+                    <name>Dumbbell Rear Delt Fly</name>
+                    <exercisePhoto src="exercises/dumbbell_rear_delt_fly.png"/>
+                    <muscles>Rear Deltoid</muscles>
+                    <musclesPhoto src="muscles/dumbbell_rear_delt_fly.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="4">
+                    <name>Smith Machine Incline Bench Press</name>
+                    <exercisePhoto src="exercises/smith_machine_incline_bench_press.png"/>
+                    <muscles>Upper Chest</muscles>
+                    <musclesPhoto src="muscles/smith_machine_incline_bench_press.png"/>
+                    <warmUp>
+                        <series>3</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="5">
+                    <name>Dumbbell Bench Press</name>
+                    <exercisePhoto src="exercises/dumbbell_bench_press.png"/>
+                    <muscles>Chest</muscles>
+                    <musclesPhoto src="muscles/dumbbell_bench_press.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="6">
+                    <name>Cable Chest Fly</name>
+                    <exercisePhoto src="exercises/cable_chest_fly.png"/>
+                    <muscles>Chest</muscles>
+                    <musclesPhoto src="muscles/cable_chest_fly.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="7">
+                    <name>Tricep Pushdown</name>
+                    <exercisePhoto src="exercises/tricep_pushdown.png"/>
+                    <muscles>Triceps</muscles>
+                    <musclesPhoto src="muscles/tricep_pushdown.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="8">
+                    <name>Overhead Tricep Extension Machine</name>
+                    <exercisePhoto src="exercises/overhead_tricep_extension_machine.png"/>
+                    <muscles>Triceps</muscles>
+                    <musclesPhoto src="muscles/overhead_tricep_extension_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>2</estimatedTime>
+                    <quantity>8</quantity>
+                    <primaryMuscle>Lateral,</primaryMuscle>
+                    <primaryMuscle>Front Deltoid,</primaryMuscle>
+                    <primaryMuscle>Rear Deltoid,</primaryMuscle>
+                    <primaryMuscle>Upper Chest,</primaryMuscle>
+                    <primaryMuscle>Chest,</primaryMuscle>
+                    <primaryMuscle>Triceps</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_push.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-05-04">
+            <training split="pull">
+                <exercise cid="9">
+                    <name>Lat Pulldown Machine</name>
+                    <exercisePhoto src="exercises/lat_pulldown_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/lat_pulldown_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="10">
+                    <name>Barbell Row</name>
+                    <exercisePhoto src="exercises/barbell_row.png"/>
+                    <muscles>Lats, Trapezius</muscles>
+                    <musclesPhoto src="muscles/barbell_row.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="11">
+                    <name>Seated Row Machine</name>
+                    <exercisePhoto src="exercises/seated_row_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/seated_row_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="12">
+                    <name>Cable Face Pull</name>
+                    <exercisePhoto src="exercises/cable_face_pull.png"/>
+                    <muscles>Upper Back, Rear Deltoid, Trapezius</muscles>
+                    <musclesPhoto src="muscles/cable_face_pull.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="13">
+                    <name>Preacher Curl Machine</name>
+                    <exercisePhoto src="exercises/preacher_curl_machine.png"/>
+                    <muscles>Biceps</muscles>
+                    <musclesPhoto src="muscles/preacher_curl_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="14">
+                    <name>Hammer Curl</name>
+                    <exercisePhoto src="exercises/hammer_curl.png"/>
+                    <muscles>Brachioradialis, foreamrs</muscles>
+                    <musclesPhoto src="muscles/hammer_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Inclice Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1.5</estimatedTime>
+                    <quantity>6</quantity>
+                    <primaryMuscle>Lats,</primaryMuscle>
+                    <primaryMuscle>Trapezius,</primaryMuscle>
+                    <primaryMuscle>Rear Deltoid,</primaryMuscle>
+                    <primaryMuscle>Biceps</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_pull.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-05-05">
+            <training split="legs">
+                <exercise cid="15">
+                    <name>Barbell Squat</name>
+                    <exercisePhoto src="exercises/barbell_squat.png"/>
+                    <muscles>Quads</muscles>
+                    <musclesPhoto src="muscles/barbell_squat.png"/>
+                    <warmUp>
+                        <series>3</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="16">
+                    <name>Seated Legs Extension Machine</name>
+                    <exercisePhoto src="exercises/seated_legs_extension_machine.png"/>
+                    <muscles>Quads</muscles>
+                    <musclesPhoto src="muscles/seated_legs_extension_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="17">
+                    <name>Cable Leg Curl</name>
+                    <exercisePhoto src="exercises/cable_leg_curl.png"/>
+                    <muscles>Harmstrings</muscles>
+                    <musclesPhoto src="muscles/cable_leg_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="18">
+                    <name>Adductor Machine</name>
+                    <exercisePhoto src="exercises/adductor_machine.png"/>
+                    <muscles>Inner thighs</muscles>
+                    <musclesPhoto src="muscles/adductor_machine.png"/>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="19">
+                    <name>Abductor Machine</name>
+                    <exercisePhoto src="exercises/abductor_machine.png"/>
+                    <muscles>Outer thighs</muscles>
+                    <musclesPhoto src="muscles/abductor_machine.png"/>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="20">
+                    <name>Cable Forearm Curls</name>
+                    <exercisePhoto src="exercises/cable_forearm_curls.png"/>
+                    <muscles>Foreamrs</muscles>
+                    <musclesPhoto src="muscles/cable_forearm_curls.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="21">
+                    <name>Cable Reverse Wrist Curl</name>
+                    <exercisePhoto src="exercises/cable_reverse_wrist_curl.png"/>
+                    <muscles>Foreamrs</muscles>
+                    <musclesPhoto src="muscles/cable_reverse_wrist_curl.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1.83</estimatedTime>
+                    <quantity>7</quantity>
+                    <primaryMuscle>Quads,</primaryMuscle>
+                    <primaryMuscle>Harmstrings,</primaryMuscle>
+                    <primaryMuscle>Thighs,</primaryMuscle>
+                    <primaryMuscle>Foreamrs</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_legs.png"/>
+                </summary>
+            </training>
+        </day>
+    </plan>
+    <plan pid="2">
+        <name>Monaka</name>
+        <start>2024-06-10</start>
+        <end>2024-06-16</end>
+        <day date="2024-06-10">
+            <training split="mixed">
+                <exercise cid="1">
+                    <name>Cable Lateral Raise</name>
+                    <exercisePhoto src="exercises/cable_lateral_raise.png"/>
+                    <muscles>Lateral Deltoid</muscles>
+                    <musclesPhoto src="muscles/cable_lateral_raise.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="2">
+                    <name>Dumbbell Shoulder Press</name>
+                    <exercisePhoto src="exercises/dumbbell_shoulder_press.png"/>
+                    <muscles>Front Deltoid</muscles>
+                    <musclesPhoto src="muscles/dumbbell_shoulder_press.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="4">
+                    <name>Smith Machine Incline Bench Press</name>
+                    <exercisePhoto src="exercises/smith_machine_incline_bench_press.png"/>
+                    <muscles>Upper Chest</muscles>
+                    <musclesPhoto src="muscles/smith_machine_incline_bench_press.png"/>
+                    <warmUp>
+                        <series>3</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="13">
+                    <name>Preacher Curl Machine</name>
+                    <exercisePhoto src="exercises/preacher_curl_machine.png"/>
+                    <muscles>Biceps</muscles>
+                    <musclesPhoto src="muscles/preacher_curl_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                </exercise>
+                <exercise cid="14">
+                    <name>Hammer Curl</name>
+                    <exercisePhoto src="exercises/hammer_curl.png"/>
+                    <muscles>Brachioradialis, foreamrs</muscles>
+                    <musclesPhoto src="muscles/hammer_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                </exercise>
+                <exercise cid="7">
+                    <name>Tricep Pushdown</name>
+                    <exercisePhoto src="exercises/tricep_pushdown.png"/>
+                    <muscles>Triceps</muscles>
+                    <musclesPhoto src="muscles/tricep_pushdown.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                </exercise>
+                <exercise cid="8">
+                    <name>Overhead Tricep Extension Machine</name>
+                    <exercisePhoto src="exercises/overhead_tricep_extension_machine.png"/>
+                    <muscles>Triceps</muscles>
+                    <musclesPhoto src="muscles/overhead_tricep_extension_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1.2</estimatedTime>
+                    <quantity>8</quantity>
+                    <primaryMuscle>Lateral Deltoid,</primaryMuscle>
+                    <primaryMuscle>Front Deltoid,</primaryMuscle>
+                    <primaryMuscle>Biceps,</primaryMuscle>
+                    <primaryMuscle>Upper Chest,</primaryMuscle>
+                    <primaryMuscle>Triceps</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_mixed1.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-06-11">
+            <rest>Rest day</rest>
+        </day>
+        <day date="2024-06-12">
+            <training split="mixed">
+                <exercise cid="9">
+                    <name>Lat Pulldown Machine</name>
+                    <exercisePhoto src="exercises/lat_pulldown_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/lat_pulldown_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="11">
+                    <name>Seated Row Machine</name>
+                    <exercisePhoto src="exercises/seated_row_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/seated_row_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="3">
+                    <name>Dumbbell Rear Delt Fly</name>
+                    <exercisePhoto src="exercises/dumbbell_rear_delt_fly.png"/>
+                    <muscles>Rear Deltoid</muscles>
+                    <musclesPhoto src="muscles/dumbbell_rear_delt_fly.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="20">
+                    <name>Cable Forearm Curls</name>
+                    <exercisePhoto src="exercises/cable_forearm_curls.png"/>
+                    <muscles>Foreamrs</muscles>
+                    <musclesPhoto src="muscles/cable_forearm_curls.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>0.8</estimatedTime>
+                    <quantity>5</quantity>
+                    <primaryMuscle>Lats,</primaryMuscle>
+                    <primaryMuscle>Trapezius,</primaryMuscle>
+                    <primaryMuscle>Rear Deltoid,</primaryMuscle>
+                    <primaryMuscle>Foreamrs</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_mixed2.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-06-13">
+            <rest>rest day</rest>
+        </day>
+        <day date="2024-06-14">
+            <training split="legs">
+                <exercise cid="15">
+                    <name>Barbell Squat</name>
+                    <exercisePhoto src="exercises/barbell_squat.png"/>
+                    <muscles>Quads</muscles>
+                    <musclesPhoto src="muscles/barbell_squat.png"/>
+                    <warmUp>
+                        <series>3</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="16">
+                    <name>Seated Legs Extension Machine</name>
+                    <exercisePhoto src="exercises/seated_legs_extension_machine.png"/>
+                    <muscles>Quads</muscles>
+                    <musclesPhoto src="muscles/seated_legs_extension_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="17">
+                    <name>Cable Leg Curl</name>
+                    <exercisePhoto src="exercises/cable_leg_curl.png"/>
+                    <muscles>Harmstrings</muscles>
+                    <musclesPhoto src="muscles/cable_leg_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Incline Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1</estimatedTime>
+                    <quantity>8</quantity>
+                    <primaryMuscle>Quads,</primaryMuscle>
+                    <primaryMuscle>Harmstrings</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_mixed3.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-06-15">
+            <training split="mixed">
+                <exercise cid="9">
+                    <name>Lat Pulldown Machine</name>
+                    <exercisePhoto src="exercises/lat_pulldown_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/lat_pulldown_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="10">
+                    <name>Barbell Row</name>
+                    <exercisePhoto src="exercises/barbell_row.png"/>
+                    <muscles>Lats, Trapezius</muscles>
+                    <musclesPhoto src="muscles/barbell_row.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="11">
+                    <name>Seated Row Machine</name>
+                    <exercisePhoto src="exercises/seated_row_machine.png"/>
+                    <muscles>Lats</muscles>
+                    <musclesPhoto src="muscles/seated_row_machine.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="12">
+                    <name>Cable Face Pull</name>
+                    <exercisePhoto src="exercises/cable_face_pull.png"/>
+                    <muscles>Upper Back, Rear Deltoid, Trapezius</muscles>
+                    <musclesPhoto src="muscles/cable_face_pull.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="13">
+                    <name>Preacher Curl Machine</name>
+                    <exercisePhoto src="exercises/preacher_curl_machine.png"/>
+                    <muscles>Biceps</muscles>
+                    <musclesPhoto src="muscles/preacher_curl_machine.png"/>
+                    <warmUp>
+                        <series>2</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="14">
+                    <name>Hammer Curl</name>
+                    <exercisePhoto src="exercises/hammer_curl.png"/>
+                    <muscles>Brachioradialis, foreamrs</muscles>
+                    <musclesPhoto src="muscles/hammer_curl.png"/>
+                    <warmUp>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </warmUp>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="18">
+                    <name>Adductor Machine</name>
+                    <exercisePhoto src="exercises/adductor_machine.png"/>
+                    <muscles>Inner thighs</muscles>
+                    <musclesPhoto src="muscles/adductor_machine.png"/>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <exercise cid="19">
+                    <name>Abductor Machine</name>
+                    <exercisePhoto src="exercises/abductor_machine.png"/>
+                    <muscles>Outer thighs</muscles>
+                    <musclesPhoto src="muscles/abductor_machine.png"/>
+                    <topSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </topSet>
+                    <backOffSet>
+                        <series>1</series>
+                        <reps>10</reps>
+                    </backOffSet>
+                </exercise>
+                <cardio>
+                    <name>Treadmill Inclice Walking</name>
+                    <exercisePhoto src="exercises/treadmill_incline_walking.png"/>
+                    <period>20</period>
+                    <speed>5.5</speed>
+                    <incline>10</incline>
+                </cardio>
+                <summary>
+                    <estimatedTime>1.75</estimatedTime>
+                    <quantity>6</quantity>
+                    <primaryMuscle>Lats,</primaryMuscle>
+                    <primaryMuscle>Trapezius,</primaryMuscle>
+                    <primaryMuscle>Rear Deltoid,</primaryMuscle>
+                    <primaryMuscle>Biceps,</primaryMuscle>
+                    <primaryMuscle>Adductors,</primaryMuscle>
+                    <primaryMuscle>Abductors</primaryMuscle>
+                    <musclesTargetedPhoto src="muscles/split_mixed4.png"/>
+                </summary>
+            </training>
+        </day>
+        <day date="2024-06-16">
+            <rest>Rest day</rest>
+        </day>
+    </plan>
+</trainingPlan>

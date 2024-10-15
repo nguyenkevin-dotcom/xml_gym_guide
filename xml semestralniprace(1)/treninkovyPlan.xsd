@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:nguyen:treninkovyPlan"
+    xmlns="urn:nguyen:treninkovyPlan" xmlns:t="urn:nguyen:treninkovyPlan"
+    elementFormDefault="qualified">
+
+    <xs:element name="trainingPlan" type="trainingPlanType"> 
+        <xs:key name="unique_personKey">
+            <xs:selector xpath="t:person"/>
+            <xs:field xpath="@oid"/>
+        </xs:key>
+        
+        <xs:key name="unique_planKey">
+            <xs:selector xpath="t:plan"/>
+            <xs:field xpath="@pid"/>
+        </xs:key>
+        
+        <xs:key name="unique_date">
+            <xs:selector xpath="t:plan/t:day/date"/>
+            <xs:field xpath="@date"/>
+        </xs:key>
+        
+        <xs:key name="unique_plan_nameKey">
+            <xs:selector xpath="t:plan/t:name"/>
+            <xs:field xpath="."/>
+        </xs:key>
+      
+        
+        <xs:key name="givenPlanKey">
+            <xs:selector xpath="t:person/t:givenPlan/t:name"></xs:selector>
+            <xs:field xpath="."></xs:field>
+        </xs:key>
+        
+        <xs:keyref refer="unique_plan_nameKey" name="planToPerson">
+            <xs:selector xpath="t:person/t:givenPlan/t:name"/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+        
+    </xs:element>
+        
+    <xs:complexType name="trainingPlanType">
+        <xs:sequence>
+            <xs:element name="person" type="personType" minOccurs="1" maxOccurs="10"/>
+            <xs:element name="plan" type="planType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="personType">
+        <xs:sequence>
+            <xs:element name="forename" type="nonEmptyString"/>
+            <xs:element name="surname" type="nonEmptyString"/>
+            <xs:element name="age" type="ageType"/>
+            <xs:element name="height" type="xs:nonNegativeInteger"/>
+            <xs:element name="weight" type="xs:nonNegativeInteger"/>
+            <xs:element name="goal" type="nonEmptyString"/>
+            <xs:element name="profession" type="professionType"/>
+            <xs:element name="frequencyInAWeek" type="frequencyInAWeekType"/>
+            <xs:element name="experience" type="floatNonNegative"/>
+            <xs:element name="givenPlan" type="plansType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="oid" type="xs:int" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="plansType">
+       <xs:sequence>
+           <xs:element name="name" type="nonEmptyString"/>
+       </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="planType">
+        <xs:complexContent>
+            <xs:extension base="plansType">
+                <xs:sequence>
+                    <xs:element name="start" type="dateType" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="end" type="dateType" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="day" type="dayType" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="pid" type="xs:int" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="dayType">
+        <xs:sequence>
+            <xs:element name="training" type="trainingType" minOccurs="0"/>
+            <xs:element name="rest" type="nonEmptyString" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="date" type="xs:date" use="required"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="trainingType">
+        <xs:sequence>
+            <xs:element name="exercise" type="exerciseType" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="cardio" type="cardioType"/>
+            <xs:element name="summary" type="summaryType"/>
+        </xs:sequence>
+        <xs:attribute name="split" type="splitType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="exerciseType">
+        <xs:sequence>
+            <xs:element name="name" type="nonEmptyString"/>
+            <xs:element name="exercisePhoto" type="photoType"/>
+            <xs:element name="muscles" type="nonEmptyString"/>
+            <xs:element name="musclesPhoto" type="photoType"/>
+            <xs:element name="warmUp" type="setType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="topSet" type="setType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="backOffSet" type="setType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="cid" type="xs:int" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="cardioType">
+        <xs:sequence>
+            <xs:element name="name" type="nonEmptyString"/>
+            <xs:element name="exercisePhoto" type="photoType"/>
+            <xs:element name="period" type="xs:nonNegativeInteger"/>
+            <xs:element name="speed" type="xs:float"/>
+            <xs:element name="incline" type="xs:nonNegativeInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="summaryType">
+        <xs:sequence>
+            <xs:element name="estimatedTime" type="floatNonNegative"/>
+            <xs:element name="quantity" type="xs:nonNegativeInteger"/>
+            <xs:element name="primaryMuscle" type="nonEmptyString" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="musclesTargetedPhoto" type="photoType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="setType">
+        <xs:sequence>
+            <xs:element name="series" type="seriesType"/>
+            <xs:element name="reps" type="repsType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="professionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="student"/>
+            <xs:enumeration value="employed"/>
+            <xs:enumeration value="unemployed"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="frequencyInAWeekType">
+        <xs:restriction base="xs:integer">
+            <xs:minExclusive value="1"/>
+            <xs:maxExclusive value="7"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="splitType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="push"/>
+            <xs:enumeration value="pull"/>
+            <xs:enumeration value="legs"/>
+            <xs:enumeration value="mixed"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="seriesType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dateType">
+        <xs:restriction base="xs:date">
+            <xs:minInclusive value="2024-01-01"/>
+            <xs:maxInclusive value="2024-12-12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="nonEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ageType">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="repsType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="4"/>
+            <xs:maxInclusive value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <xs:complexType name="photoType">
+        <xs:attribute name="src" type="srcType" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="srcType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([a-zA-Z0-9/_-]{1,})\.(jpg|png)"/>    
+        </xs:restriction>              
+    </xs:simpleType>
+    
+    <xs:simpleType name="floatNonNegative">
+        <xs:restriction base="xs:float">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+
+
+
+
+
+
+
+
+</xs:schema>

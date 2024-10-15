@@ -1,0 +1,156 @@
+* {
+    font-family: "Inconsolata", monospace;
+    font-weight: 500;
+    font-style: normal;
+    color: #130e0e;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+a {
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+h1 {
+    position: sticky;
+    top: 0px;
+    padding: 0px 20px;
+    background-color: white;
+    height: 40px;
+}
+
+h2 {
+    padding-left: 10px;
+}
+
+h2:nth-child(2) {
+    font-weight: bold;
+    color: black;
+
+}
+
+h3 {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+table,
+th {
+    border: 2.5px solid grey;
+    border-collapse: collapse;
+}
+
+.dates td:nth-child(1) {
+    font-weight: bold;
+}
+
+.dates td {
+    border: 2.5px solid grey;
+    border-collapse: collapse;
+}
+
+table .roster,
+.reps {
+    display: block;
+    text-align: center;
+    width: 100%;
+
+}
+
+td {
+    border: 2.5px solid grey;
+}
+
+table {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.muscles {
+    width: 15em;
+    display: block;
+    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.exercise {
+    width: 20em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.cardio{
+    width: 30em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.summary {
+    width: 30em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.roster th {
+    font-weight: bold;
+}
+
+
+.reps {
+    display: table;
+    border: none;
+}
+
+
+.reps th {
+    border: none;
+}
+
+.reps td {
+    text-align: center;
+    border: none;
+}
+
+.roster td {
+    text-align: center;
+
+}
+
+.roster td {
+    width: 13em;
+}
+
+.roster td:first-child {
+    font-weight: bold;
+}
+
+.reps td:first-child {
+    font-weight: 300;
+}
+
+footer {
+    position: static;
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+    bottom: 0;
+    width: 100%;
+    padding: 0.3em 0.7em 0.3em 0.7em;
+    margin-left: 0
+}

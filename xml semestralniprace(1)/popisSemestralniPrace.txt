@@ -1,0 +1,8 @@
+Tréninkový plán
+
+Téma semestrální práce bude tréninkový plán pro danou osobu.
+Tréninkový plán bude obsahovat osobní informace ohledně dané osoby. 
+Součástí tréninkového plánu bude také trénink určitého dne s různými cviky, které budou mít název, počet sérií, opakování
+a ještě doplňující informaci, na jaké svaly se tyto cviky zaměřují.
+K tréninku bude ješte shrnutí,které bude obsahovat délka tréninku, počet cvičení a primární svaly, které budou nejvíce vytíženy.
+ 

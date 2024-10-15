@@ -1,0 +1,67 @@
+* {
+    font-family: "Inconsolata", monospace;
+    font-weight: 500;
+    font-style: normal;
+    color: #130e0e;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+h1 {
+    position: sticky;
+    top: 0px;
+    padding: 0px 20px;
+    background-color: white;
+    height: 40px;
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+h3 {
+    font-size: 150%;
+    color: black;
+    font-weight: bold;
+
+}
+
+
+table td:nth-child(2) {
+    padding-left: 200px;
+}
+
+table td:first-child {
+    font-weight: bold;
+}
+
+
+table {
+    display: block;
+    border: 2.5px solid gray;
+    margin: 20px auto;
+    padding: 20px 20px;
+    width: 800px;
+
+}
+
+table td a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    position: static;
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+    bottom: 0;
+    width: 100%;
+    padding: 0.3em 0.7em 0.3em 0.7em;
+    margin-left: 0
+}
